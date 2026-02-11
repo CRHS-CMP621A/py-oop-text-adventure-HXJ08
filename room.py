@@ -1,3 +1,4 @@
+import items
 class room():
     def __init__(self,room_name):
         self.name = room_name
@@ -28,6 +29,10 @@ class room():
         for direction in self.link_rooms:
             room = self.link_rooms[direction]
             print( "The " + room.get_name() + " is " + direction)
+        for item in items.items:
+            if items.items[item] == self.name:
+                print("You see a " + item)
+        
 
     def move(self, direction):
         if direction in self.link_rooms:

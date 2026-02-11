@@ -1,4 +1,5 @@
 from room import room
+from items import Items
 
 kitchen = room("Kitchen")
 kitchen.set_description("A dank and dirty room buzzing with flies.")
@@ -8,6 +9,13 @@ dining_hall.set_description("A large room with ornate golden decorations on each
 
 ballroom = room("Ballroom")
 ballroom.set_description("A vast room with a shiny wooden floor. Huge candlesticks guard the entrance.")
+
+knife = Items("Knife", "A sharp looking knife, it looks like it has been used recently.")
+knife.set_location("Kitchen")
+controller = Items("Controller", "A game controller, it looks like it has been used recently.")
+controller.set_location("Dining Hall")
+ball = Items("Ball", "A small ball, it looks like it has been used recently.")
+ball.set_location("Ballroom")
 
 kitchen.link_room(dining_hall, "south")
 dining_hall.link_room(kitchen, "north")
